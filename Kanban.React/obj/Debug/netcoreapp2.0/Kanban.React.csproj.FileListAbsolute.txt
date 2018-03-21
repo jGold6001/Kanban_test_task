@@ -1,0 +1,10 @@
+F:\Kanban_test\Kanban.React\bin\Debug\netcoreapp2.0\Kanban.React.deps.json
+F:\Kanban_test\Kanban.React\bin\Debug\netcoreapp2.0\Kanban.React.runtimeconfig.json
+F:\Kanban_test\Kanban.React\bin\Debug\netcoreapp2.0\Kanban.React.runtimeconfig.dev.json
+F:\Kanban_test\Kanban.React\bin\Debug\netcoreapp2.0\Kanban.React.dll
+F:\Kanban_test\Kanban.React\bin\Debug\netcoreapp2.0\Kanban.React.pdb
+F:\Kanban_test\Kanban.React\obj\Debug\netcoreapp2.0\Kanban.React.csproj.CoreCompileInputs.cache
+F:\Kanban_test\Kanban.React\obj\Debug\netcoreapp2.0\Kanban.React.AssemblyInfoInputs.cache
+F:\Kanban_test\Kanban.React\obj\Debug\netcoreapp2.0\Kanban.React.AssemblyInfo.cs
+F:\Kanban_test\Kanban.React\obj\Debug\netcoreapp2.0\Kanban.React.dll
+F:\Kanban_test\Kanban.React\obj\Debug\netcoreapp2.0\Kanban.React.pdb

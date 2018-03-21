@@ -1,0 +1,41 @@
+﻿body {
+    font: 20px verdana, sans-serif;
+}
+
+.column-style{
+   
+}
+
+.column-header {
+    border: 1px solid black;
+    color: white;
+    background-color: black;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;   
+}
+
+.column-content {
+    border: 1px solid black;
+}
+
+.card{
+    border: 1px solid gray;
+    margin: 15px;
+   
+}
+
+.card-title{
+    font-weight: bold;
+
+}
+
+.title-styles{
+    background-color: lightgray;
+    padding: 5px;
+    border-bottom: 1px solid gray;
+}
+
+.card-text{
+    padding-left: 3px;
+}
