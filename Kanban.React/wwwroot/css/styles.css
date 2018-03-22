@@ -22,12 +22,10 @@
 .card{
     border: 1px solid gray;
     margin: 15px;
-   
 }
 
 .card-title{
     font-weight: bold;
-
 }
 
 .title-styles{
@@ -39,3 +37,27 @@
 .card-text{
     padding-left: 3px;
 }
+
+
+.addition{
+    width: 290px;
+    border: 1px solid gray;
+    padding: 5px;
+    background-color: black;
+}
+
+.kanban-form {
+    display: none;
+}
+
+.btns-card-form{
+    text-align: right;
+}
+
+.cancel-btn {  
+    margin-left: 10px;
+}
+.add-to-btn{
+
+}
+

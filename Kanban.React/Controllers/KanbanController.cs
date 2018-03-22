@@ -49,5 +49,20 @@ namespace Kanban.React.Controllers
             data.Remove(card);
             return Ok(card);
         }
+
+
+
+        [HttpPut("{id}")]
+        public IActionResult Update(string id, [FromBody]Card newCard)
+        {
+            Card card = data.FirstOrDefault(x => x.Id == newCard.Id);
+            if (card == null)
+            {
+                return NotFound();
+            }
+            data.FirstOrDefault(x => x.Id == newCard.Id).Title = newCard.Title;
+            data.FirstOrDefault(x => x.Id == newCard.Id).Description = newCard.Description;
+            return Ok(card);
+        }
     }
 }
