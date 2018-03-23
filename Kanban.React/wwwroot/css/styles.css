@@ -2,24 +2,102 @@
     font: 20px verdana, sans-serif;
 }
 
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+    src: local('Material Icons'), local('MaterialIcons-Regular'), url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'), url(https://example.com/MaterialIcons-Regular.woff) format('woff'), url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px; /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+/*COLUMNS*/
 .column-style{
    
 }
 
-.column-header {
-    border: 1px solid black;
-    color: white;
-    background-color: black;
+.column-header {   
     text-align: center;
     padding: 10px;
     font-weight: bold;   
 }
 
 .column-content {
-    border: 1px solid black;
+    
 }
 
-.card{
+
+
+/*TO DO COLUMN*/
+.column-content-to-do {
+    border: 1px solid #BDC3C7;
+}
+
+.column-to-do {
+
+}
+
+.column-heager-to-do {
+    background-color: #CACFD2;
+    border: 1px solid #BDC3C7;
+}
+
+
+/*IN PROGRESS COLUMN*/
+.column-content-in-progress {
+    border: 1px solid #F1C40F;
+}
+
+.column-in-progress {
+
+}
+
+.column-heager-in-progress {
+    background-color: #F4D03F;
+    border: 1px solid #F1C40F;
+}
+
+
+
+/*DONE COLUMN*/
+.column-content-done {
+    border: 1px solid #2ECC71;
+}
+
+.column-done {
+
+}
+
+.column-header-done {
+    background-color: #58D68D; 
+    border: 1px solid #2ECC71; 
+}
+
+
+
+/*Card*/
+.card {
     border: 1px solid gray;
     margin: 15px;
 }
@@ -31,24 +109,89 @@
 .title-styles{
     background-color: lightgray;
     padding: 5px;
-    border-bottom: 1px solid gray;
 }
 
-.card-text{
-    padding-left: 3px;
+.to-do-card {
+    border: 1px solid #D7DBDD;
+}
+
+.to-do-title-styles {
+    background-color: #E5E7E9;
 }
 
 
-.addition{
-    width: 290px;
+.in-progress-card {
+    border: 1px solid #F7DC6F;
+}
+
+.in-progress-title-styles {
+    background-color: #F9E79F;
+}
+
+
+.done-card {
+    border: 1px solid #82E0AA;
+}
+
+.done-title-styles {
+    background-color: #ABEBC6;
+}
+
+
+.card-text {
+    padding: 15px;
+    font: 17px Lucida Console, Courier, monospace;
+}
+
+.btn-edit{
+
+}
+
+.btn-close{
+    color: red;
+    margin-left: 5px;
+}
+
+
+/*KANBAN FORM*/
+.addition {
+    width: 60%;
     border: 1px solid gray;
     padding: 5px;
-    background-color: black;
+    background-color: black;  
 }
+
+
+@media (max-width: 1024px) {
+    .addition {
+        width: 80%;     
+    }
+}
+
+
+@media (max-width: 474px) {
+    .addition {
+        width: 100%;
+    }
+}
+
+
+.title_{
+    width: 100%;
+}
+
+.description_ {
+    resize: none;   
+    width: 100%;
+    height: 200px;
+}
+
 
 .kanban-form {
     display: none;
 }
+
+
 
 .btns-card-form{
     text-align: right;
@@ -59,5 +202,27 @@
 }
 .add-to-btn{
 
+}
+
+
+/*edit-form for card*/
+.edit-form {
+    border: 1px solid gray;
+    padding: 10px;
+    background: lightgray;
+}
+
+.ta-edit {
+    resize: none;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.input-edit {
+    width: 100%;
+}
+
+.btns-edit {
+    margin-top: 10px;
 }
 

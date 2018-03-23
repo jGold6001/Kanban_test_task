@@ -8,3 +8,4 @@ F:\Kanban_test\Kanban.React\obj\Debug\netcoreapp2.0\Kanban.React.AssemblyInfoInp
 F:\Kanban_test\Kanban.React\obj\Debug\netcoreapp2.0\Kanban.React.AssemblyInfo.cs
 F:\Kanban_test\Kanban.React\obj\Debug\netcoreapp2.0\Kanban.React.dll
 F:\Kanban_test\Kanban.React\obj\Debug\netcoreapp2.0\Kanban.React.pdb
+F:\Kanban_test\Kanban.React\obj\Debug\netcoreapp2.0\Kanban.React.csprojResolveAssemblyReference.cache
