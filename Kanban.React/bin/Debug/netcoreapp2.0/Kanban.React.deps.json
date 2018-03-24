@@ -24,6 +24,7 @@
       "Kanban.React/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.All": "2.0.6",
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.0.2",
           "Microsoft.NETCore.App": "2.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.3",
           "React.AspNet": "3.3.0"

@@ -22,8 +22,9 @@
 
     createEditForm() {
         var editForm = document.createElement("div");
-        editForm.setAttribute('class', 'edit-form');
-
+        editForm.classList.add("edit-form");
+        editForm.classList.add(this.props.action + "-edit-form");
+        editForm.setAttribute("data-id", this.state.data.id);
         var container = this.createDiv('container');
 
         //input
@@ -43,11 +44,13 @@
         rowBtns.classList.add("btns-edit");
         var colBtns = this.createDiv('col-md-12');
         var btnOk = this.createBtn("Ok");
+        btnOk.setAttribute("data-id", this.state.data.id);
         btnOk.addEventListener('click', this.onClickOk);
         btnOk.classList.add("btn");
         btnOk.classList.add("btn-default");
 
         var btnCancel = this.createBtn("Cancel");
+        btnCancel.setAttribute("data-id", this.state.data.id);
         btnCancel.addEventListener('click', this.onClickCancel);
         btnCancel.classList.add("btn");
         btnCancel.classList.add("btn-default");
@@ -75,7 +78,6 @@
         element.classList.add(className);
         return element;
     }
-
 
     createTitleInput(data) {
         var input = document.createElement('input');        
@@ -118,15 +120,18 @@
     }
 
     onClickOk(e) {
-        e.preventDefault();      
-        this.changeCard();
+        
+        var btnValue = e.target.attributes.getNamedItem('data-id').value;
+        this.changeCard(btnValue);
         this.props.onUpdate(this.state.data);
+      
     }
 
     onClickCancel(e) {   
-        e.preventDefault();
-        this.changeCard();
+        var btnValue = e.target.attributes.getNamedItem('data-id').value;
+        this.changeCard(btnValue);
         this.setState({ data: this.getBuffData() });
+        
     }
 
     onTitleChange(e) {
@@ -136,11 +141,15 @@
         this.setState({ data: _data });
     }
 
-    changeCard() {
-        var card = document.getElementById('edit');
-        card.childNodes[0].style.display = 'block';
-        card.removeChild(card.childNodes[1]);
-        card.removeAttribute('id');
+    changeCard(value) {
+        var cards = document.getElementsByClassName('card');
+
+        for (const item of cards) {
+            if (item.attributes.getNamedItem('data-id').value == value) {
+                item.childNodes[0].style.display = 'block';
+                item.removeChild(item.childNodes[1]);
+            }
+        }
     }
 
     onDescriptionChange(e) {
@@ -155,8 +164,7 @@
         this.setBuffData();
         for (var i = 0; i < renderData.length; i++) {
             if (renderData[i].getAttribute('data-id') == this.state.data.id) {
-                var card = renderData[i];
-                card.setAttribute('id', 'edit');
+                var card = renderData[i];                
                 var formEdit = this.createEditForm();
                 var oldElement = card.childNodes[0].style.display = "none";
                 card.appendChild(formEdit);
@@ -326,7 +334,7 @@ class CardList extends React.Component {
 
     onUpdateCard(card) {
         if (card) {
-            var data = JSON.stringify({ "id": card.id, "title": card.title, "description": card.description });
+            var data = JSON.stringify({ "id": card.id, "title": card.title, "description": card.description, "state": card.state  });
            
             var xhr = new XMLHttpRequest();
             xhr.open("post", this.props.apiUrl+"/update", true);

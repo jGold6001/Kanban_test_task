@@ -156,9 +156,9 @@
 /*KANBAN FORM*/
 .addition {
     width: 60%;
-    border: 1px solid gray;
+    border: 1px solid #357ebd;
     padding: 5px;
-    background-color: black;  
+    background-color: #357ebd;
 }
 
 
@@ -210,6 +210,18 @@
     border: 1px solid gray;
     padding: 10px;
     background: lightgray;
+}
+
+.to-do-edit-form {
+    background-color: #E5E7E9;
+}
+
+.in-progress-edit-form {
+    background-color: #F9E79F;
+}
+
+.done-edit-form {
+    background-color: #ABEBC6;
 }
 
 .ta-edit {

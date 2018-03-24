@@ -45,14 +45,6 @@ namespace Kanban.React.Controllers
             return data.Where(d => d.State == States.DONE);
         }
 
-        [HttpGet("change/card/{id}/column/{number}")]
-        public IActionResult ChangeColumn(string id, int number)
-        {
-            data.Find(c => c.Id == id).State = number;
-            return Ok();
-        }
-
-
         [HttpGet("in-progress")]
         public IEnumerable<Card> GetInProgress()
         {

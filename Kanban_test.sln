@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kanban.React", "Kanban.React\Kanban.React.csproj", "{20036344-E83F-44BB-A573-6A7DC490EF60}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kanban.Domain", "Kanban.Domain\Kanban.Domain.csproj", "{1FC434C4-9BD8-461D-889D-22C81B4822E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kanban.Domain.Tests", "Kanban.Domain.Tests\Kanban.Domain.Tests.csproj", "{004B08BE-8852-447A-8549-8EBA29785064}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{20036344-E83F-44BB-A573-6A7DC490EF60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20036344-E83F-44BB-A573-6A7DC490EF60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20036344-E83F-44BB-A573-6A7DC490EF60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FC434C4-9BD8-461D-889D-22C81B4822E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FC434C4-9BD8-461D-889D-22C81B4822E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FC434C4-9BD8-461D-889D-22C81B4822E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FC434C4-9BD8-461D-889D-22C81B4822E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{004B08BE-8852-447A-8549-8EBA29785064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{004B08BE-8852-447A-8549-8EBA29785064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{004B08BE-8852-447A-8549-8EBA29785064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{004B08BE-8852-447A-8549-8EBA29785064}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
