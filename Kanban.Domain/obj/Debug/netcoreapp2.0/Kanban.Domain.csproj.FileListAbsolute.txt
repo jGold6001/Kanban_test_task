@@ -1,9 +1,0 @@
-F:\Kanban_test\Kanban.Domain\bin\Debug\netcoreapp2.0\Kanban.Domain.deps.json
-F:\Kanban_test\Kanban.Domain\bin\Debug\netcoreapp2.0\Kanban.Domain.dll
-F:\Kanban_test\Kanban.Domain\bin\Debug\netcoreapp2.0\Microsoft.EntityFrameworkCore.dll
-F:\Kanban_test\Kanban.Domain\bin\Debug\netcoreapp2.0\Microsoft.EntityFrameworkCore.xml
-F:\Kanban_test\Kanban.Domain\obj\Debug\netcoreapp2.0\Kanban.Domain.csprojResolveAssemblyReference.cache
-F:\Kanban_test\Kanban.Domain\obj\Debug\netcoreapp2.0\Kanban.Domain.csproj.CoreCompileInputs.cache
-F:\Kanban_test\Kanban.Domain\obj\Debug\netcoreapp2.0\Kanban.Domain.AssemblyInfoInputs.cache
-F:\Kanban_test\Kanban.Domain\obj\Debug\netcoreapp2.0\Kanban.Domain.AssemblyInfo.cs
-F:\Kanban_test\Kanban.Domain\obj\Debug\netcoreapp2.0\Kanban.Domain.csproj.CopyComplete

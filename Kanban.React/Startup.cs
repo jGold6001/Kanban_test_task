@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Kanban.Domain.Interfaces;
+using Kanban.Domain.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -9,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Ninject;
 using React.AspNet;
 
 namespace Kanban.React
@@ -30,6 +33,16 @@ namespace Kanban.React
             app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseMvc();
+        }
+
+        private IKernel RegisterApplicationComponents(IApplicationBuilder app)
+        {
+            // IKernelConfiguration config = new KernelConfiguration();
+            var kernel = new StandardKernel();
+
+            kernel.Bind<ICardService>().To<CardService>();
+
+            return kernel;
         }
     }
 }

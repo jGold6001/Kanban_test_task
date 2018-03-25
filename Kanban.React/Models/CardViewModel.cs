@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace Kanban.Domain.Entities
+namespace Kanban.React.Models
 {
-    public class Card
+    public class CardViewModel
     {
         public long Id { get; set; }
         public string Title { get; set; }

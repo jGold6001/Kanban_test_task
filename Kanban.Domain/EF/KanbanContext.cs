@@ -17,7 +17,7 @@ namespace Kanban.Domain.EF
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("");
+            optionsBuilder.UseSqlServer("Server=tcp:diplomserver.database.windows.net,1433;Initial Catalog=JayTests;Persist Security Info=False;User ID=jay;Password=qwerty-12345;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         }
     }
 }

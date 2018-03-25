@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using Kanban.Domain.Entities;
+using Kanban.Domain.Services;
 using Kanban.React.Models;
 using Kanban.React.Models.Constants;
 using Microsoft.AspNetCore.Http;
@@ -12,69 +15,63 @@ namespace Kanban.React.Controllers
     [Route("api/kanban")]
     public class KanbanController : Controller
     {
-        static readonly List<Card> data;
+        CardService cardService;
+        IMapper mapperCard, mapperCardViewModel;
 
-
-        static KanbanController()
+        KanbanController(CardService cardService)
         {
-            data = new List<Card>
-            {
-                new Card { Id = Guid.NewGuid().ToString(), State = States.TODO, Title="card_1", Description="Vimba Rio Grande perch aruana turbot common carp toadfish, char, eel-goby sheatfish, armored searobin sand goby, antenna codlet conger eel chubsucker"},
-                new Card { Id = Guid.NewGuid().ToString(), State = States.TODO, Title="card_2", Description="Vimba Rio Grande perch aruana turbot common carp toadfish, char, eel-goby sheatfish, armored searobin sand goby, antenna codlet conger eel chubsucker"},
-                new Card { Id = Guid.NewGuid().ToString(), State = States.TODO, Title="card_3", Description="Vimba Rio Grande perch aruana turbot common carp toadfish, char, eel-goby sheatfish, armored searobin sand goby, antenna codlet conger eel chubsucker"},
-
-                new Card { Id = Guid.NewGuid().ToString(), State = States.INPROGRESS, Title="card_4", Description="Vimba Rio Grande perch aruana turbot common carp toadfish, char, eel-goby sheatfish, armored searobin sand goby, antenna codlet conger eel chubsucker"},
-                new Card { Id = Guid.NewGuid().ToString(), State = States.INPROGRESS, Title="card_5", Description="Vimba Rio Grande perch aruana turbot common carp toadfish, char, eel-goby sheatfish, armored searobin sand goby, antenna codlet conger eel chubsucker"},
-                new Card { Id = Guid.NewGuid().ToString(), State = States.INPROGRESS, Title="card_6", Description="Vimba Rio Grande perch aruana turbot common carp toadfish, char, eel-goby sheatfish, armored searobin sand goby, antenna codlet conger eel chubsucker"},
-
-                new Card { Id = Guid.NewGuid().ToString(), State = States.DONE, Title="card_7", Description="Vimba Rio Grande perch aruana turbot common carp toadfish, char, eel-goby sheatfish, armored searobin sand goby, antenna codlet conger eel chubsucker"},
-                new Card { Id = Guid.NewGuid().ToString(), State = States.DONE, Title="card_8", Description="Vimba Rio Grande perch aruana turbot common carp toadfish, char, eel-goby sheatfish, armored searobin sand goby, antenna codlet conger eel chubsucker"},
-                
-            };
+            this.cardService = cardService;
+            mapperCardViewModel = new Mapper(new MapperConfiguration(cfg => cfg.CreateMap<Card, CardViewModel>()));
+            mapperCard = new Mapper(new MapperConfiguration(cfg => cfg.CreateMap<CardViewModel, Card>()));
         }
 
         [HttpGet("all")]
-        public IEnumerable<Card> GetAll()
+        public IEnumerable<CardViewModel> GetAll()
         {
-            return data;
+            var cards = cardService.GetAll().ToList();
+            var cardsVM = mapperCardViewModel.Map<List<Card>, List<CardViewModel>>(cards);
+            return cardsVM;          
         }
 
         [HttpGet("done")]
-        public IEnumerable<Card> GetDone()
+        public IEnumerable<CardViewModel> GetDone()
         {
-            return data.Where(d => d.State == States.DONE);
+            return null;
+            //return data.Where(d => d.State == States.DONE);
         }
 
         [HttpGet("in-progress")]
-        public IEnumerable<Card> GetInProgress()
+        public IEnumerable<CardViewModel> GetInProgress()
         {
-            return data.Where(d => d.State == States.INPROGRESS);
+            return null;
+            //return data.Where(d => d.State == States.INPROGRESS);
         }
 
         [HttpGet("to-do")]
-        public IEnumerable<Card> GetToDo()
+        public IEnumerable<CardViewModel> GetToDo()
         {
-            return data.Where(d => d.State == States.TODO);
+            return null;
+            //return data.Where(d => d.State == States.TODO);
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody]Card card)
+        public IActionResult Post([FromBody]CardViewModel card)
         {
-            card.Id = Guid.NewGuid().ToString();
-            data.Add(card);
-            return Ok(card);
+            //card.Id = Guid.NewGuid().ToString();
+            //data.Add(card);
+            return Ok();
         }
 
         [HttpDelete("{id}")]
         public IActionResult Delete(string id)
         {
-            Card card = data.FirstOrDefault(x => x.Id == id);
-            if (card == null)
-            {
-                return NotFound();
-            }
-            data.Remove(card);
-            return Ok(card);
+            //Card card = data.FirstOrDefault(x => x.Id == id);
+            //if (card == null)
+            //{
+            //    return NotFound();
+            //}
+            //data.Remove(card);
+            return Ok();
         }
 
 
@@ -82,15 +79,15 @@ namespace Kanban.React.Controllers
         [HttpPost("update")]
         public IActionResult Update([FromBody]Card newCard)
         {
-            Card card = data.FirstOrDefault(x => x.Id == newCard.Id);
-            if (card == null)
-            {
-                return NotFound();
-            }
-            card.Title = newCard.Title;
-            card.Description = newCard.Description;
-            card.State = newCard.State;
-            return Ok(card);
+            //Card card = data.FirstOrDefault(x => x.Id == newCard.Id);
+            //if (card == null)
+            //{
+            //    return NotFound();
+            //}
+            //card.Title = newCard.Title;
+            //card.Description = newCard.Description;
+            //card.State = newCard.State;
+            return Ok();
         }
     }
 }
