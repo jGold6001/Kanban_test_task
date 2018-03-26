@@ -10,7 +10,6 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
-    <PackageReference Include="Ninject" Version="3.3.4" />
     <PackageReference Include="React.AspNet" Version="3.3.0" />
   </ItemGroup>
 

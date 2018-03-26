@@ -11,7 +11,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Ninject;
 using React.AspNet;
 
 namespace Kanban.React
@@ -27,6 +26,8 @@ namespace Kanban.React
             return services.BuildServiceProvider();
         }
 
+
+
         public void Configure(IApplicationBuilder app)
         {
             app.UseReact(config => { });
@@ -35,14 +36,6 @@ namespace Kanban.React
             app.UseMvc();
         }
 
-        private IKernel RegisterApplicationComponents(IApplicationBuilder app)
-        {
-            // IKernelConfiguration config = new KernelConfiguration();
-            var kernel = new StandardKernel();
-
-            kernel.Bind<ICardService>().To<CardService>();
-
-            return kernel;
-        }
+        
     }
 }

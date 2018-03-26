@@ -92,10 +92,27 @@ namespace Kanban.Domain.Tests.Sevices
             Assert.AreEqual(listActual.Count(), listExpected.Count());
 
 
-            //var allCards = service.GetAll();
-            //foreach (var item in allCards)
-            //    service.RemoveCard(item.Id);
-            
+            var allCards = service.GetAll();
+            foreach (var item in allCards)
+                service.RemoveCard(item.Id);
+
+        }
+
+        [TestMethod]
+        public void LoadTestData()
+        {
+            List<Card> list = new List<Card>()
+            {
+                new Card(){Title="Task one", Description="To do my task one...", State=0},
+                new Card(){Title="Task two", Description="To do my task two...", State =0},
+                new Card(){Title="Task three", Description="In progress my task three...", State=1},
+                new Card(){Title="Task four", Description="In progress my task four...", State =1},
+                new Card(){Title="Task five", Description="Done my task five...", State =2}
+            };
+
+            foreach (var item in list)
+                service.AddCard(item);
+
         }
     }
 
